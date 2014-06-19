@@ -1,0 +1,100 @@
+﻿<!-- 
+Permission to cache a subset of the contents of a service
+(TestODRL1:archsites), as long as an explicit consent
+has been obtained and the policy terms have been reviewed, 
+and prohibition to cache another subset (TestODRL1:bugsites).
+
+According to the protocol, this means that the other
+contents can be cached without the need to fulfill any duties
+(this probably does not make a lot of sense, but this
+license is designed to test different aspects of the 
+protocol, not to be realistic).
+
+The protocol is described in...  
+
+To the extent possible under law, ... has waived all copyright 
+and related or neighboring rights to this XML file. This work is 
+published from: ... 
+-->
+
+<o:policy type="http://w3.org/ns/odrl/vocab#set" 
+ uid="http://geoservices.protocol.com/policy:0002_TESTODRL1" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns="http://w3.org/ns/odrl/2/" xmlns:o="http://w3.org/ns/odrl/2/" 
+ xsi:schemaLocation="http://w3.org/ns/odrl/2/ http://www.w3.org/ns/odrl/2/ODRL20.xsd">
+
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<!-- Permission to *read* the service contents. Required. -->
+<o:permission>
+<o:asset uid="http://mularroya05.cps.unizar.es:8081/geoserver/TestODRL1/wfs" relation="http://w3.org/ns/odrl/vocab#target"></o:asset>
+<o:action name="http://w3.org/ns/odrl/vocab#read"></o:action>
+
+<!-- Constraints *count* in a certain *timeInterval* on the read
+permission. The action (read) can be exercised
+for less than or equal to 300 times per hour.
+-->
+<o:constraint name="http://w3.org/ns/odrl/vocab#count" 
+ operator="http://w3.org/ns/odrl/vocab#lteq" rightOperand="300"></o:constraint>
+<o:constraint name="http://w3.org/ns/odrl/vocab#timeInterval" 
+ operator="http://w3.org/ns/odrl/vocab#eq" rightOperand="RPT1H"></o:constraint>
+
+</o:permission>
+<!--____________________________________________________________________________-->
+
+
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<!-- Permission to archive (i.e. cache) a subset of the service contents 
+(TestODRL1:archsites).
+-->
+<o:permission>
+<o:asset uid="http://mularroya05.cps.unizar.es:8081/geoserver/TestODRL1/wfs#TestODRL1:archsites" relation="http://w3.org/ns/odrl/vocab#target"></o:asset>
+<o:action name="http://w3.org/ns/odrl/vocab#archive"></o:action>
+
+
+<!-- Constraint elapsedTime on archive. 
+The action (archive) can be exercised
+for less than or equal to 6 months (this period of time starts when
+the harvester starts to cache the service contents).
+-->
+<o:constraint name="http://w3.org/ns/odrl/vocab#elapsedTime" 
+ operator="http://w3.org/ns/odrl/vocab#lteq" 
+ rightOperand="P6M"></o:constraint>
+
+<!-- Duty *obtainConsent* on the archive permission. Optional. -->
+<o:duty> 
+<o:action name="http://w3.org/ns/odrl/vocab#obtainconsent"></o:action>
+</o:duty>
+
+<!-- Duty *reviewPolicy* on the archive permission. Optional. -->
+<o:duty> 
+<o:action name="http://w3.org/ns/odrl/vocab#reviewpolicy"></o:action>
+</o:duty>
+ 
+</o:permission>
+<!--____________________________________________________________________________-->
+
+
+
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<!-- Prohibition to archive (i.e. cache) a subset of the service contents 
+(TestODRL1:bugsites).
+-->
+<o:prohibition>
+<o:asset uid="http://mularroya05.cps.unizar.es:8081/geoserver/TestODRL1/wfs#TestODRL1:bugsites" relation="http://w3.org/ns/odrl/vocab#target"></o:asset>
+<o:action name="http://w3.org/ns/odrl/vocab#archive"></o:action> 
+</o:prohibition>
+<!--____________________________________________________________________________-->
+
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<!-- Metadata about the protocol itself (current version) -->
+<protocol:metadata
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:protocol="http://geoprotocol.odrl2.com/metadata">
+<dc:title>Protocol for machine-readable cache
+policies in standard web geoservices</dc:title>
+<dc:identifier>Draft_Proposal</dc:identifier>
+</protocol:metadata>
+<!--____________________________________________________________________________-->
+
+</o:policy>

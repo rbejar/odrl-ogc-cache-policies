@@ -1,0 +1,53 @@
+ <!-- 
+Permission to cache the contents of a service.
+
+The protocol is described in...  
+
+To the extent possible under law, ... has waived all copyright 
+and related or neighboring rights to this XML file. This work is 
+published from: ...
+-->
+
+<o:policy type="http://w3.org/ns/odrl/vocab#set" 
+ uid="http://geoservices.protocol.com/policy:0002_TESTODRL3" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns="http://w3.org/ns/odrl/2/" xmlns:o="http://w3.org/ns/odrl/2/" 
+ xsi:schemaLocation="http://w3.org/ns/odrl/2/ http://www.w3.org/ns/odrl/2/ODRL20.xsd">
+
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<!-- Permission to *read* the service contents.
+-->
+<o:permission>
+<o:asset uid="http://mularroya05.cps.unizar.es:8081/geoserver/TestODRL3/wfs" relation="http://w3.org/ns/odrl/vocab#target"></o:asset>
+<o:action name="http://w3.org/ns/odrl/vocab#read"></o:action>
+</o:permission>
+<!--____________________________________________________________________________-->
+
+
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<!-- Permission to archive (i.e. cache) the service contents. 
+-->
+<o:permission>
+<o:asset uid="http://mularroya05.cps.unizar.es:8081/geoserver/TestODRL3/wfs" relation="http://w3.org/ns/odrl/vocab#target"></o:asset>
+<o:action name="http://w3.org/ns/odrl/vocab#archive"></o:action>
+
+<!-- Duty *reviewPolicy* on the archive permission. Optional. -->
+<o:duty> 
+<o:action name="http://w3.org/ns/odrl/vocab#reviewpolicy"></o:action>
+</o:duty>
+ 
+</o:permission>
+<!--____________________________________________________________________________-->
+
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<!-- Metadata about the protocol itself (current version) -->
+<protocol:metadata
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:protocol="http://geoprotocol.odrl2.com/metadata">
+<dc:title>Protocol for machine-readable cache
+policies in standard web geoservices</dc:title>
+<dc:identifier>Draft_Proposal</dc:identifier>
+</protocol:metadata>
+<!--____________________________________________________________________________-->
+</o:policy>
