@@ -84,7 +84,7 @@ the result of a run of this program:
 
 About the WFS services
 ======================
-Three OGC WFS services have been set up using (Geoserver)[http://geoserver.org/] to test the protocol 
+Three OGC WFS services have been set up using [Geoserver](http://geoserver.org/) to test the protocol 
 (ODRL_Paper.py reads their capabilities to extract the ODRL licenses as the protocol requires). Creating 
 an OGC web service with Geoserver that uses the protocol is simple: you set it up as usual with the
 Geoserver web administration tool, and right there you include the text you want in the *Acess Constraints*
