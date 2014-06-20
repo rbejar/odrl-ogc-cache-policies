@@ -1,0 +1,54 @@
+﻿<!-- 
+Template: Prohibition to cache the contents of a service.
+
+The protocol is described in...  
+
+To the extent possible under law, ... has waived all copyright 
+and related or neighboring rights to this XML file. This work is 
+published from: ...
+-->
+
+<!-- The user of this template must change the policy uid. For instance, any 
+URI can be used, as long as it is unique. 
+-->
+<o:policy type="http://w3.org/ns/odrl/vocab#set" 
+ uid="http://geoservices.protocol.com/policy:0003" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns="http://w3.org/ns/odrl/2/" xmlns:o="http://w3.org/ns/odrl/2/" 
+ xsi:schemaLocation="http://w3.org/ns/odrl/2/ http://www.w3.org/ns/odrl/2/ODRL20.xsd">
+
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<!-- Permission to *read* the service contents. Required. 
+The user of this template must change ServiceURL for its service URL (service can be
+a WMS, WMTS, WFS, WCS or CSW).
+-->
+<o:permission>
+<o:asset uid="ServiceURL" relation="http://w3.org/ns/odrl/vocab#target"></o:asset>
+<o:action name="http://w3.org/ns/odrl/vocab#read"></o:action>
+</o:permission>
+<!--____________________________________________________________________________-->
+
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<!-- Prohibition to *archive* the service contents. Required. 
+The user of this template must change ServiceURL for its service URL (service can be
+a WMS, WMTS, WFS, WCS or CSW).
+-->
+<o:prohibition>
+<o:asset uid="ServiceURL" relation="http://w3.org/ns/odrl/vocab#target"></o:asset>
+<o:action name="http://w3.org/ns/odrl/vocab#archive"></o:action>
+</o:prohibition>
+<!--____________________________________________________________________________-->
+
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<!-- Metadata about the protocol itself (current version) -->
+<protocol:metadata
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:protocol="http://geoprotocol.odrl2.com/metadata">
+<dc:title>Protocol for machine-readable cache
+policies in standard web geoservices</dc:title>
+<dc:identifier>Draft_Proposal</dc:identifier>
+</protocol:metadata>
+<!--____________________________________________________________________________-->
+
+</o:policy>

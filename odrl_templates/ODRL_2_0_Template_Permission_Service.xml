@@ -1,0 +1,110 @@
+﻿<!-- 
+Template: Permission to cache the contents of a service.
+
+The protocol is described in...  
+
+To the extent possible under law, ... has waived all copyright 
+and related or neighboring rights to this XML file. This work is 
+published from: ...
+-->
+
+<!-- The user of this template must change the policy uid. For instance, any 
+URI can be used, as long as it is unique. 
+-->
+<o:policy type="http://w3.org/ns/odrl/vocab#set" 
+ uid="http://geoservices.protocol.com/policy:0001" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns="http://w3.org/ns/odrl/2/" xmlns:o="http://w3.org/ns/odrl/2/" 
+ xsi:schemaLocation="http://w3.org/ns/odrl/2/ http://www.w3.org/ns/odrl/2/ODRL20.xsd">
+
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<!-- Permission to *read* the service contents. Required. 
+The user of this template must change ServiceURL for its service URL (service can be
+a WMS, WMTS, WFS, WCS or CSW).
+-->
+<o:permission>
+<o:asset uid="ServiceURL" relation="http://w3.org/ns/odrl/vocab#target"></o:asset>
+<o:action name="http://w3.org/ns/odrl/vocab#read"></o:action>
+
+<!-- Constraints *count* in a certain *timeInterval* on the read
+permission. Optional. 
+
+As defined in this example, the action (read) can be exercised
+for less than or equal to 600 times per hour.
+
+The timeInterval must conform to the ISO-8601 according to the
+ODRL 2.0 common vocabulary. In this template we require it to be a recurring
+time interval defined by a context (the time point when the harvester reads
+this rights expression) and a duration. In the example R is for recurring 
+interval and PT1H is a 1 hour duration). 
+-->
+<o:constraint name="http://w3.org/ns/odrl/vocab#count" 
+ operator="http://w3.org/ns/odrl/vocab#lteq" rightOperand="600"></o:constraint>
+<o:constraint name="http://w3.org/ns/odrl/vocab#timeInterval" 
+ operator="http://w3.org/ns/odrl/vocab#eq" rightOperand="RPT1H"></o:constraint>
+
+<!-- Duty *obtainConsent* on the read permission. Optional. -->
+<o:duty> 
+<o:action name="http://w3.org/ns/odrl/vocab#obtainconsent"></o:action>
+</o:duty>
+
+<!-- Duty *reviewPolicy* on the read permission. Optional. -->
+<o:duty> 
+<o:action name="http://w3.org/ns/odrl/vocab#reviewpolicy"></o:action>
+</o:duty>
+
+</o:permission>
+<!--____________________________________________________________________________-->
+
+
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<!-- Permission to archive (i.e. cache) the service contents. Required. 
+The user of this template must change ServiceURL for its service URL (service can be
+a WMS, WMTS, WFS, WCS or CSW).
+-->
+<o:permission>
+<o:asset uid="ServiceURL" relation="http://w3.org/ns/odrl/vocab#target"></o:asset>
+<o:action name="http://w3.org/ns/odrl/vocab#archive"></o:action>
+
+
+<!-- Constraint elapsedTime on archive. Optional. 
+As defined in this example, the action (archive) can be exercised
+for less than or equal to 3 months (this period of time starts when
+the harvester starts to cache the service contents).
+
+The elapsedTime is a period of time (i.e. duration in ISO-8601), that starts
+when the action is first exercised (i.e. when the harvester starts to cache) and 
+should be conform to the ISO-8601 (not explicit in the common vocabulary of the
+ODRL 2.0, but we are requiring it).
+
+P3M is a 3 month period in ISO-8601. 
+-->
+<o:constraint name="http://w3.org/ns/odrl/vocab#elapsedTime" 
+ operator="http://w3.org/ns/odrl/vocab#lteq" 
+ rightOperand="P3M"></o:constraint>
+
+<!-- Duty *obtainConsent* on the archive permission. Optional. -->
+<o:duty> 
+<o:action name="http://w3.org/ns/odrl/vocab#obtainconsent"></o:action>
+</o:duty>
+
+<!-- Duty *reviewPolicy* on the archive permission. Optional. -->
+<o:duty> 
+<o:action name="http://w3.org/ns/odrl/vocab#reviewpolicy"></o:action>
+</o:duty>
+ 
+</o:permission>
+<!--____________________________________________________________________________-->
+
+<!-- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->
+<!-- Metadata about the protocol itself (current version) -->
+<protocol:metadata
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xmlns:protocol="http://geoprotocol.odrl2.com/metadata">
+<dc:title>Protocol for machine-readable cache
+policies in standard web geoservices</dc:title>
+<dc:identifier>Draft_Proposal</dc:identifier>
+</protocol:metadata>
+<!--____________________________________________________________________________-->
+</o:policy>
