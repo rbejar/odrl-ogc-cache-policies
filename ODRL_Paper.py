@@ -1,13 +1,28 @@
 #!/usr/bin/env python2.7
 # -*- coding: UTF-8 -*-
-'''
-An experimental implementation for the protocol defined in ...
-It is not robust or production-ready; it is an experiment
-to test if the mentioned protocol can be implemented as proposed, and
-to show how that could be done.
 
-@author: 
-'''
+# Copyright (C) 2014 Rubén Béjar {http://www.rubenbejar.com/}
+# An experimental implementation for the protocol defined in this paper:
+# A protocol for machine-readable cache policies in OGC web services: Application to the EuroGeoSource information system.  R. BÉJAR, F.J. LOPEZ-PELLICER, J. NOGUERAS-ISO, F.J. ZARAZAGA-SORIA, P.R. MURO-MEDRANO.  Environmental Modelling & Software.  2014,  vol. 60,  p. 346-356, doi:10.1016/j.envsoft.2014.06.026.
+# <http://dx.doi.org/doi:10.1016/j.envsoft.2014.06.026>
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy of
+# this software and associated documentation files (the "Software"), to deal in
+# the Software without restriction, including without limitation the rights to
+# use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+# the Software, and to permit persons to whom the Software is furnished to do so,
+# subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+# FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+# COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+# IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+# CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 
 import copy
 import re
