@@ -3,7 +3,11 @@
 
 # Copyright (C) 2014 Rubén Béjar {http://www.rubenbejar.com/}
 # An experimental implementation for the protocol defined in this paper:
-# A protocol for machine-readable cache policies in OGC web services: Application to the EuroGeoSource information system.  R. BÉJAR, F.J. LOPEZ-PELLICER, J. NOGUERAS-ISO, F.J. ZARAZAGA-SORIA, P.R. MURO-MEDRANO.  Environmental Modelling & Software.  2014,  vol. 60,  p. 346-356, doi:10.1016/j.envsoft.2014.06.026.
+# A protocol for machine-readable cache policies in OGC web services: 
+# Application to the EuroGeoSource information system.  
+# R. BÉJAR, F.J. LOPEZ-PELLICER, J. NOGUERAS-ISO, F.J. ZARAZAGA-SORIA, 
+# P.R. MURO-MEDRANO.  Environmental Modelling & Software.  2014,  
+# vol. 60,  p. 346-356, doi:10.1016/j.envsoft.2014.06.026.
 # <http://dx.doi.org/doi:10.1016/j.envsoft.2014.06.026>
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy of
