@@ -1,6 +1,13 @@
 odrl-ogc-cache-policies
 =======================
 An experimental implementation of a protocol for machine-readable cache policies in OGC and ISO geoservices.
+The protocol is described in this paper: 
+[A protocol for machine-readable cache policies in OGC web services: Application to the EuroGeoSource information system](http://www.sciencedirect.com/science/article/pii/S1364815214001996). If you do not have access to the full document, the author's final version (with almost exactly the same content) is available at <http://iaaa.cps.unizar.es/curriculum/08-Publicaciones-Articulos/art_2014_EMS_Protocol_vdef_author.pdf>. 
+
+Full citation:
+
+A protocol for machine-readable cache policies in OGC web services: Application to the EuroGeoSource information system.  R. BÉJAR, F.J. LOPEZ-PELLICER, J. NOGUERAS-ISO, F.J. ZARAZAGA-SORIA, P.R. MURO-MEDRANO.  Environmental Modelling & Software.  2014,  vol. 60,  p. 346-356, doi:10.1016/j.envsoft.2014.06.026.
+
 
 Instructions
 ============
