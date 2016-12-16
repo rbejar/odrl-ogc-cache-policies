@@ -312,9 +312,9 @@ def is_content_caching_prohibited(policy_element, service_uid, content_id):
 # - TesTODRL3 license is a full cache permission with a duty: a
 #   human must review the archive policy before proceeding.
 
-testODRL1URL = 'http://mularroya05.cps.unizar.es:8081/geoserver/TestODRL1/wfs'
-testODRL2URL = 'http://mularroya05.cps.unizar.es:8081/geoserver/TestODRL2/wfs'
-testODRL3URL = 'http://mularroya05.cps.unizar.es:8081/geoserver/TestODRL3/wfs'
+testODRL1URL = 'http://www.rubenbejar.com/odrl-ogc-cache-policies/TestODRL1_Capabilities.xml'
+testODRL2URL = 'http://www.rubenbejar.com/odrl-ogc-cache-policies/TestODRL2_Capabilities.xml'
+testODRL3URL = 'http://www.rubenbejar.com/odrl-ogc-cache-policies/TestODRL3_Capabilities.xml'
 
 def test1():
     """

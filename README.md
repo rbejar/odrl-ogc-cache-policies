@@ -99,11 +99,11 @@ Geoserver web administration tool, and right there you include the text you want
 section. As long as that text includes an URL with a valid ODRL file (that can be hosted wherever you 
 prefer), you are ready.
 
-These are the three services get capabilites requests:
+These are the three capabilites files (static, not coming from an actual WFS services; this is not relevant to the test because it does not request anything else from the services):
 
-- <http://mularroya05.cps.unizar.es:8081/geoserver/TestODRL1/wfs?request=GetCapabilities>
-- <http://mularroya05.cps.unizar.es:8081/geoserver/TestODRL2/wfs?request=GetCapabilities> 
-- <http://mularroya05.cps.unizar.es:8081/geoserver/TestODRL3/wfs?request=GetCapabilities>
+- <https://rbejar.github.io/odrl-ogc-cache-policies/TestODRL1_Capabilities.xml>
+- <https://rbejar.github.io/odrl-ogc-cache-policies/TestODRL2_Capabilities.xml> 
+- <https://rbejar.github.io/odrl-ogc-cache-policies/TestODRL3_Capabilities.xml>
 
 And these are the three ODRL license files that are linked from the *Access Constraints* section on those
 capabilities (hosted on github.io, but they could be anywhere):
